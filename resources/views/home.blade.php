@@ -286,6 +286,116 @@
 
 
 
+<!-- ================= REVIEWS SECTION ================= -->
+<section class="w-full bg-teal-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Patient Reviews</h2>
+      <div class="w-24 h-1 bg-teal-500 mx-auto mt-3"></div>
+    </div>
+
+    <!-- Slider Wrapper -->
+    <div class="relative">
+
+      <!-- Left Arrow -->
+      <button onclick="moveSlide(-1)"
+        class="absolute -left-12 top-1/2 -translate-y-1/2 bg-white shadow-lg p-4 rounded-full hover:scale-110 transition">
+        ❮
+      </button>
+
+      <!-- Carousel -->
+      <div id="reviewCarousel"
+        class="flex gap-6 overflow-hidden scroll-smooth">
+
+        <!-- Review -->
+        <div class="review-card bg-white p-6 rounded-2xl shadow-lg text-center transition duration-300 hover:-translate-y-1 hover:shadow-teal-600/50 min-w-[32%]">
+          <img src="https://i.pravatar.cc/100?img=1" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h3 class="font-semibold">Ahmed Ali</h3>
+          <div class="text-yellow-400 text-lg">★★★★★</div>
+          <p class="text-gray-600 mt-3">Excellent service and very professional doctors.</p>
+        </div>
+
+        <div class="review-card bg-white p-6 rounded-2xl shadow-lg text-center transition duration-300 hover:-translate-y-1 hover:shadow-teal-600/50 min-w-[32%]">
+          <img src="https://i.pravatar.cc/100?img=5" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h3 class="font-semibold">Sara Mohammed</h3>
+          <div class="text-yellow-400 text-lg">★★★★★</div>
+          <p class="text-gray-600 mt-3">Clean clinic and friendly staff.</p>
+        </div>
+
+        <div class="review-card bg-white p-6 rounded-2xl shadow-lg text-center transition duration-300 hover:-translate-y-1 hover:shadow-teal-600/50 min-w-[32%]">
+          <img src="https://i.pravatar.cc/100?img=3" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h3 class="font-semibold">Omar Hassan</h3>
+          <div class="text-yellow-400 text-lg">★★★★☆</div>
+          <p class="text-gray-600 mt-3">Fast appointments and great care.</p>
+        </div>
+
+        <div class="review-card bg-white p-6 rounded-2xl shadow-lg text-center transition duration-300 hover:-translate-y-1 hover:shadow-teal-600/50 min-w-[32%]">
+          <img src="https://i.pravatar.cc/100?img=4" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h3 class="font-semibold">Lina Kareem</h3>
+          <div class="text-yellow-400 text-lg">★★★★★</div>
+          <p class="text-gray-600 mt-3">Very modern equipment and nice environment.</p>
+        </div>
+
+        <div class="review-card bg-white p-6 rounded-2xl shadow-lg text-center transition duration-300 hover:-translate-y-1 hover:shadow-teal-600/50 min-w-[32%]">
+          <img src="https://i.pravatar.cc/100?img=2" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h3 class="font-semibold">Yousef Ahmad</h3>
+          <div class="text-yellow-400 text-lg">★★★★★</div>
+          <p class="text-gray-600 mt-3">Doctors explained everything clearly.</p>
+        </div>
+
+        <div class="review-card bg-white p-6 rounded-2xl shadow-lg text-center transition duration-300 hover:-translate-y-1 hover:shadow-teal-600/50 min-w-[32%]">
+          <img src="https://i.pravatar.cc/100?img=6" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h3 class="font-semibold">Hassan Ali</h3>
+          <div class="text-yellow-400 text-lg">★★★★☆</div>
+          <p class="text-gray-600 mt-3">Good service and short waiting time.</p>
+        </div>
+
+      </div>
+
+      <!--Right Arrow-->
+      <button onclick="moveSlide(1)"
+        class="absolute -right-12 top-1/2 -translate-y-1/2 bg-white shadow-lg p-4 rounded-full hover:scale-110 transition">
+        ❯
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==== JS ==== -->
+<script>
+  const carousel = document.getElementById("reviewCarousel");
+  let scrollAmount = 0;
+
+  function moveSlide(direction) {
+    const cardWidth = carousel.children[0].offsetWidth + 24;
+    scrollAmount += direction * cardWidth;
+
+    if (scrollAmount < 0) scrollAmount = 0;
+    if (scrollAmount > carousel.scrollWidth - carousel.clientWidth) {
+      scrollAmount = 0;
+    }
+
+    carousel.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth"
+    });
+  }
+
+  // Auto slide
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000);
+</script>
+
+
+
+
+
+
 
 
 
