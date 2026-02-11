@@ -11,18 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('doctors', function (Blueprint $table) {
-    $table->id();
-    $table->string('name');
-    $table->string('specialty');
-    $table->string('phone');
-    $table->string('email');
-    $table->string('image')->nullable();
-    $table->string('linkedin')->nullable();
-    $table->string('instagram')->nullable();
-    $table->timestamps();
-});
-
+        Schema::create('doctors', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**
